@@ -20,7 +20,7 @@ class Scraper
     page = Nokogiri::HTML(open(profile_url))
     student = {}
     page.css("a") each do |social|
-      if social.value.include?("twitter")
+      if social.attribute("href").value.include?("twitter")
         student[:twitter] = social.value
       elsif social.value.include?("linkedin")
         student[:linkedin] = social.value
