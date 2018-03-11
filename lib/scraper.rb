@@ -21,6 +21,7 @@ class Scraper
     student = {}
     page.css(".social-icon-container").each do |social|
       student[:twitter] = social.css("a").attribute("href").value
+      student[:linkedin] = social.css("a").attribute("href").value
     end
 
     student[:profile_quote] = page.css(".profile-quote").text
