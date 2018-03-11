@@ -20,7 +20,7 @@ class Scraper
     page = Nokogiri::HTML(open(profile_url))
     student = {}
     page.css(".social-icon-container").each do |social|
-      student[social] = social
+      student[:bio] = social.css(".description-holder").text
     end
     student
   end
