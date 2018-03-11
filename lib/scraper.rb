@@ -20,7 +20,7 @@ class Scraper
     page = Nokogiri::HTML(open(profile_url))
     student = {}
     student[:bio] = page.css(".bio-content.content-holder p").text
-    student
+    student[:profile_quote] = page.css(".profile-quote p")
   end
 
 end
