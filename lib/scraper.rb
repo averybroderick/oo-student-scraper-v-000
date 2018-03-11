@@ -22,15 +22,15 @@ class Scraper
     page.css(".social-icon-container").each do |social|
       binding.pry
       puts social
-      # if social.css("a").attribute("href").value.include?("twitter")
-      #   student[:twitter] = social.css("a").attribute("href").value
-      # elsif social.css("a").attribute("href").value.include?("linkedin")
-      #   student[:linkedin] = social.css("a").attribute("href").value
-      # elsif social.css("a").attribute("href").value.include?("github")
-      #   student[:github] = social.css("a").attribute("href").value
-      # else
-      #   student[:blog] = social.css("a").attribute("href").value
-      # end
+      if social.css("a").attribute("href").value.include?("twitter")
+        student[:twitter] = social.css("a").attribute("href").value
+      elsif social.css("a").attribute("href").value.include?("linkedin")
+        student[:linkedin] = social.css("a").attribute("href").value
+      elsif social.css("a").attribute("href").value.include?("github")
+        student[:github] = social.css("a").attribute("href").value
+      else
+        student[:blog] = social.css("a").attribute("href").value
+      end
     end
 
 
