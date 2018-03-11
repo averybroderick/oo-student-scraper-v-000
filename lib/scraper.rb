@@ -21,13 +21,13 @@ class Scraper
     student = {}
     page.css(".social-icon-container a").attribute("href").value each do |social|
       if social.include?("twitter")
-        student[:twitter] = social.css("a").attribute("href").value
+        student[:twitter] = social
       elsif social.include?("linkedin")
-        student[:linkedin] = social.css("a").attribute("href").value
+        student[:linkedin] = social
       elsif social.include?("github")
-        student[:github] = social.css("a").attribute("href").value
+        student[:github] = social
       else
-        student[:blog] = social.css("a").attribute("href").value
+        student[:blog] = social
       end
     end
 
