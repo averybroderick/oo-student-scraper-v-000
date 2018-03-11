@@ -20,6 +20,7 @@ class Scraper
     page = Nokogiri::HTML(open(profile_url))
     student = {}
     page.css(".social-icon-container") each do |social|
+      binding.pru
       puts social
       # if social.css("a").attribute("href").value.include?("twitter")
       #   student[:twitter] = social.css("a").attribute("href").value
