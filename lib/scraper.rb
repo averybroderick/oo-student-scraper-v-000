@@ -33,7 +33,7 @@ class Scraper
       # student[:linkedin] = social.css("a")[1].attribute("href").value
       # student[:github] = social.css("a")[2].attribute("href").value
       # student[:blog] = social.css("a")[3].attribute("href").value
-    end
+
 
     student[:profile_quote] = page.css(".profile-quote").text
     student[:bio] = page.css(".bio-content.content-holder p").text
